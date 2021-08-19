@@ -1,5 +1,4 @@
 *** Settings ***
-Resource  ../pages/basepage.robot
 
 *** Variables ***
 ${3s}   3s
@@ -10,6 +9,7 @@ ${60s}  120s
 ${20s}  60s
 ${30s}  80s
 ${40s}  90s
+${XPATH_SPINNER}                    //*[@id="spinner-target"]/div
 
 
 *** Keywords ***
