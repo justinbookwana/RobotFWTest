@@ -5,6 +5,7 @@ Resource    ../../../main/helperkeywords/assertions.robot
 
 *** Variables ***
 ${url}      https://www.tst1.bookwana.com/
+${createEventButtonLocator}     xpath=//div[@class="flex flex-col md:flex-row"]//a[@class="btn btn--alt md:mr-md mb-sm md:mb-0"]
 
 *** Test Cases ***
 MyFirstTest
@@ -47,13 +48,12 @@ LoginHeadlessFirefox
 Provided precondition
     Setup system under test
 Headless browser process
-    click link  xpath:/html/body/main/div/section[1]/div/div/div/div[1]/div/a[1]
     ${title}    Get Title
     ${expected}     Set Variable    TryBooking
     String Should Contain  ${title}  ${expected}
     Log     ${title}
 Login process
-    click link  xpath:/html/body/main/div/section[1]/div/div/div/div[1]/div/a[1]
+    Click Element    ${createEventButtonLocator}
     click link  xpath://*[@id="login-tab"]/a
     input text  id:Username     justin@bookwana.com
     input text  id:Password     1password
