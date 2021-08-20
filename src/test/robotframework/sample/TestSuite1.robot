@@ -22,13 +22,13 @@ MyThirdTest
 
 VisitGoogleHeadlessChrome
     [Tags]  HeadlessBrowserTest
-    open browser    ${url}  headlesschrome
+    open browser    ${url}  chrome
     Headless browser process
     close browser
 
 VisitGoogleHeadlessFirefox
     [Tags]  HeadlessBrowserTest
-    open browser    ${url}  headlessfirefox
+    open browser    ${url}  firefox
     Headless browser process
     close browser
 
