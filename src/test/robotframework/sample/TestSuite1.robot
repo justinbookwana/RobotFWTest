@@ -49,8 +49,8 @@ Provided precondition
     Setup system under test
 Headless browser process
     ${title}    Get Title
-    ${expected}     Set Variable    TryBooking
-    String Should Contain  ${title}  ${expected}
+    ${expected}     Set Variable    Home | TryBooking Australia
+    Should Be Equal As Strings  ${title}  ${expected}
     Log     ${title}
 Login process
     Click Element    ${createEventButtonLocator}
