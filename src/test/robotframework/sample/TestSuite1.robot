@@ -4,8 +4,8 @@ Library     SeleniumLibrary
 Resource    ../../../main/helperkeywords/assertions.robot
 
 *** Variables ***
-${url}      https://www.tst1.bookwana.com/
-${createEventButtonLocator}     xpath=//div[@class="flex flex-col md:flex-row"]//a[@class="btn btn--alt md:mr-md mb-sm md:mb-0"]
+${url}      https://portal.tst1.bookwana.com/au/auth
+${createEventButtonLocator}     xpath=//a[@text="Create Event"]
 
 *** Test Cases ***
 MyFirstTest
@@ -22,13 +22,13 @@ MyThirdTest
 
 VisitGoogleHeadlessChrome
     [Tags]  HeadlessBrowserTest
-    open browser    ${url}  chrome
+    open browser    ${url}  headlesschrome
     Headless browser process
     close browser
 
 VisitGoogleHeadlessFirefox
     [Tags]  HeadlessBrowserTest
-    open browser    ${url}  firefox
+    open browser    ${url}  headlessfirefox
     Headless browser process
     close browser
 
@@ -49,12 +49,12 @@ Provided precondition
     Setup system under test
 Headless browser process
     ${title}    Get Title
-    ${expected}     Set Variable    Home | TryBooking Australia
+    ${expected}     Set Variable    Log in | TryBooking Australia
     Should Be Equal As Strings  ${title}  ${expected}
     Log     ${title}
 Login process
-    Click Element    ${createEventButtonLocator}
-    click link  xpath://*[@id="login-tab"]/a
+    #Click Element    ${createEventButtonLocator}
+    #click link  xpath://*[@id="login-tab"]/a
     input text  id:Username     justin@bookwana.com
     input text  id:Password     1password
     Press Keys  id:Password     ENTER
