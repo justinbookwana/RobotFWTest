@@ -20,27 +20,34 @@ MyThirdTest
     [Tags]  HiThirdWorld  HiWorld
     Log  Hi Third World!
 
+ThirdPartySiteSample
+    open browser    https://demo.nopcommerce.com/
+    click link  xpath://a[@class='ico-login']
+    input text  id:Email    pavanoltraining@gmail.com
+    input text  id:Password     Test@123
+    close browser
+
 VisitGoogleHeadlessChrome
     [Tags]  HeadlessBrowserTest
-    open browser    ${url}  headlesschrome
+    open browser    ${url}  chrome
     Headless browser process
     close browser
 
 VisitGoogleHeadlessFirefox
     [Tags]  HeadlessBrowserTest
-    open browser    ${url}  headlessfirefox
+    open browser    ${url}  firefox
     Headless browser process
     close browser
 
 LoginHeadlessChrome
     [Tags]  LoginBrowserTest
-    open browser    ${url}  headlesschrome
+    open browser    ${url}  chrome
     Login process
     close browser
 
 LoginHeadlessFirefox
     [Tags]  LoginBrowserTest
-    open browser    ${url}  headlessfirefox
+    open browser    ${url}  firefox
     Login process
     close browser
 
