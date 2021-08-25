@@ -27,27 +27,33 @@ ThirdPartySiteSample
     input text  id:Password     Test@123
     close browser
 
-VisitGoogleHeadlessChrome
+VisitGoogleChrome
     [Tags]  HeadlessBrowserTest
     open browser    ${url}  chrome
+    Headless browser process
+    close browser
+
+VisitGoogleHeadlessChrome
+    [Tags]  HeadlessBrowserTest
+    open browser    ${url}  headlesschrome
     Headless browser process
     close browser
 
 VisitGoogleHeadlessFirefox
     [Tags]  HeadlessBrowserTest
-    open browser    ${url}  firefox
+    open browser    ${url}  headlessfirefox
     Headless browser process
     close browser
 
 LoginHeadlessChrome
     [Tags]  LoginBrowserTest
-    open browser    ${url}  chrome
+    open browser    ${url}  headlesschrome
     Login process
     close browser
 
 LoginHeadlessFirefox
     [Tags]  LoginBrowserTest
-    open browser    ${url}  firefox
+    open browser    ${url}  headlessfirefox
     Login process
     close browser
 
