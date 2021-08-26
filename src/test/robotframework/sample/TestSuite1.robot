@@ -6,7 +6,7 @@ Resource    ../../../main/helperkeywords/assertions.robot
 *** Variables ***
 ${url}      https://portal.tst1.bookwana.com/au/auth
 ${createEventButtonLocator}     xpath=//a[@text="Create Event"]
-${options}  options=add_argument("--ignore-certificate-errors");add_argument("--allow-running-insecure-content")
+${options}  add_argument("--ignore-certificate-errors");add_argument("--allow-running-insecure-content")
 
 *** Test Cases ***
 MyFirstTest
@@ -42,25 +42,25 @@ MyThirdTest
 
 VisitGoogleHeadlessChrome
     [Tags]  HeadlessBrowserTest     VisitGoogleHeadlessChrome
-    open browser    ${url}  headlesschrome  ${options}
+    open browser    ${url}  headlesschrome  options=${options}
     Headless browser process
     close browser
 
 VisitGoogleHeadlessFirefox
     [Tags]  HeadlessBrowserTest
-    open browser    ${url}  headlessfirefox  ${options}
+    open browser    ${url}  headlessfirefox  options=${options}
     Headless browser process
     close browser
 
 LoginHeadlessChrome
     [Tags]  LoginBrowserTest
-    open browser    ${url}  headlesschrome  ${options}
+    open browser    ${url}  headlesschrome  options=${options}
     Login process
     close browser
 
 LoginHeadlessFirefox
     [Tags]  LoginBrowserTest
-    open browser    ${url}  headlessfirefox  ${options}
+    open browser    ${url}  headlessfirefox  options=${options}
     Login process
     close browser
 
