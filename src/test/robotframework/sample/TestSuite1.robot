@@ -78,4 +78,4 @@ Login process
     input text  id:Username     justin@bookwana.com
     input text  id:Password     1password
     Press Keys  id:Password     ENTER
-    Wait Until Page Contains    Justin_Test
+    Wait Until Page Contains    Justi_Test
