@@ -21,7 +21,7 @@ MyThirdTest
     Log  Hi Third World!
 
 ThirdPartySiteSample
-    open browser    https://demo.nopcommerce.com/   chrome  options=add_argument("start-maximized");add_argument("disable-infobars");add_argument("--disable-extensions");add_argument("--disable-gpu");add_argument("--disable-dev-shm-usage");add_argument("--no-sandbox")
+    open browser    https://demo.nopcommerce.com/   chrome  options=add_argument("start-maximized");add_argument("--allow-running-insecure-content");add_argument("disable-infobars");add_argument("--disable-extensions");add_argument("--disable-gpu");add_argument("--disable-dev-shm-usage");add_argument("--no-sandbox")
     click link  xpath://a[@class='ico-login']
     input text  id:Email    pavanoltraining@gmail.com
     input text  id:Password     Test@123
