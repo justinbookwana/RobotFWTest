@@ -45,6 +45,12 @@ VisitGoogleHeadlessFirefox
     Headless browser process
     close browser
 
+LoginChrome
+    [Tags]  LoginBrowserTest
+    open browser    ${url}  chrome
+    Login process
+    close browser
+
 LoginHeadlessChrome
     [Tags]  LoginBrowserTest
     open browser    ${url}  headlesschrome

@@ -1,0 +1,19 @@
+1629935462537	geckodriver	INFO	Listening on 127.0.0.1:62943
+1629935465640	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\JCDEGU~1\\AppData\\Local\\Temp\\rust_mozprofileX9sD4J"
+*** You are running in headless mode.
+1629935466027	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\jcdeguzman\\AppData\\Local\\Temp\\rust_mozprofileX9sD4J\\search.json.mozlz4", (void 0)))
+1629935467634	Marionette	INFO	Listening on port 62951
+1629935467670	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1629935471065	Marionette	INFO	Stopped listening on port 62951
+JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+console.error: services.settings: 
+  main/whats-new-panel Signature failed  TypeError: NetworkError when attempting to fetch resource.
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x390076,name=PContent::Msg_DestroyBrowsingContextGroup) Closed channel: cannot send/recv
+
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 1030: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\jcdeguzman\AppData\Local\Temp\rust_mozprofileX9sD4J\protections.sqlite
