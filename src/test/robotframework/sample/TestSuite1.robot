@@ -6,6 +6,7 @@ Resource    ../../../main/helperkeywords/assertions.robot
 *** Variables ***
 ${url}      https://portal.tst1.bookwana.com/au/auth
 ${createEventButtonLocator}     xpath=//a[@text="Create Event"]
+${options}  options=add_argument("--ignore-certificate-errors");add_argument("--allow-running-insecure-content")
 
 *** Test Cases ***
 MyFirstTest
@@ -18,54 +19,48 @@ MySecondTest
 
 MyThirdTest
     [Tags]  HiThirdWorld  HiWorld
-    Log  Hi Third World!
+    Log  Hi Third
 
-ThirdPartySiteSample
-    open browser    https://demo.nopcommerce.com/   chrome  options=add_argument("start-maximized");add_argument("--allow-running-insecure-content");add_argument("disable-infobars");add_argument("--disable-extensions");add_argument("--disable-gpu");add_argument("--disable-dev-shm-usage");add_argument("--no-sandbox")
-    click link  xpath://a[@class='ico-login']
-    input text  id:Email    pavanoltraining@gmail.com
-    input text  id:Password     Test@123
-    close browser
-
-VisitGoogleChrome
-    [Tags]  HeadlessBrowserTest
-    open browser    ${url}  chrome
-    Headless browser process
-    close browser
+#ThirdPartySiteSample
+#    open browser    https://demo.nopcommerce.com/   chrome  options=add_argument("start-maximized");add_argument("--allow-running-insecure-content");add_argument("disable-infobars");add_argument("--disable-extensions");add_argument("--disable-gpu");add_argument("--disable-dev-shm-usage");add_argument("--no-sandbox")
+#    click link  xpath://a[@class='ico-login']
+#    input text  id:Email    pavanoltraining@gmail.com
+#    input text  id:Password     Test@123
+#    close browser
+#
+#VisitGoogleChrome
+#    [Tags]  HeadlessBrowserTest
+#    open browser    ${url}  chrome
+#    Headless browser process
+#    close
+#
+#LoginChrome
+#    [Tags]  LoginBrowserTest
+#    open browser    ${url}  chrome
+#    Login process
+#    close browser
 
 VisitGoogleHeadlessChrome
     [Tags]  HeadlessBrowserTest     VisitGoogleHeadlessChrome
-    open browser    ${url}  headlesschrome  options=add_argument("start-maximized");add_argument("--ignore-certificate-errors");add_argument("--allow-running-insecure-content");add_argument("disable-infobars");add_argument("--disable-extensions");add_argument("--disable-gpu");add_argument("--disable-dev-shm-usage");add_argument("--no-sandbox")
-    Headless browser process
-    close browser
-
-VisitGoogleHeadlessChromeFewArguments
-    [Tags]  HeadlessBrowserTest     VisitGoogleHeadlessChrome
-    open browser    ${url}  headlesschrome  options=add_argument("--ignore-certificate-errors");add_argument("--allow-running-insecure-content")
+    open browser    ${url}  headlesschrome  ${options}
     Headless browser process
     close browser
 
 VisitGoogleHeadlessFirefox
     [Tags]  HeadlessBrowserTest
-    open browser    ${url}  headlessfirefox
+    open browser    ${url}  headlessfirefox  ${options}
     Headless browser process
-    close browser
-
-LoginChrome
-    [Tags]  LoginBrowserTest
-    open browser    ${url}  chrome
-    Login process
     close browser
 
 LoginHeadlessChrome
     [Tags]  LoginBrowserTest
-    open browser    ${url}  headlesschrome
+    open browser    ${url}  headlesschrome  ${options}
     Login process
     close browser
 
 LoginHeadlessFirefox
     [Tags]  LoginBrowserTest
-    open browser    ${url}  headlessfirefox
+    open browser    ${url}  headlessfirefox  ${options}
     Login process
     close browser
 
