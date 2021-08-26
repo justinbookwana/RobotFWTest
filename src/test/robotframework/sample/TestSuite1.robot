@@ -34,8 +34,14 @@ VisitGoogleChrome
     close browser
 
 VisitGoogleHeadlessChrome
-    [Tags]  HeadlessBrowserTest
-    open browser    ${url}  headlesschrome  options=add_argument("start-maximized");add_argument("--allow-running-insecure-content");add_argument("disable-infobars");add_argument("--disable-extensions");add_argument("--disable-gpu");add_argument("--disable-dev-shm-usage");add_argument("--no-sandbox")
+    [Tags]  HeadlessBrowserTest     VisitGoogleHeadlessChrome
+    open browser    ${url}  headlesschrome  options=add_argument("start-maximized");add_argument("--ignore-certificate-errors");add_argument("--allow-running-insecure-content");add_argument("disable-infobars");add_argument("--disable-extensions");add_argument("--disable-gpu");add_argument("--disable-dev-shm-usage");add_argument("--no-sandbox")
+    Headless browser process
+    close browser
+
+VisitGoogleHeadlessChromeFewArguments
+    [Tags]  HeadlessBrowserTest     VisitGoogleHeadlessChrome
+    open browser    ${url}  headlesschrome  options=add_argument("--ignore-certificate-errors");add_argument("--allow-running-insecure-content")
     Headless browser process
     close browser
 
